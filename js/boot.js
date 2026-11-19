@@ -1,0 +1,1 @@
+if (matchMedia('(max-width: 800px), (orientation: portrait) and (max-width: 1100px), (max-width: 1100px) and (max-height: 600px) and (pointer: coarse)').matches) document.documentElement.classList.add('m-pre');

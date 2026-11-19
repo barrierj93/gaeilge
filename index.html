@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Gaeilge, the living thread</title>
+<meta name="description" content="An interactive journey through the history of the Irish language and where it stands today, from the ogham stones to Census 2022.">
+<meta name="theme-color" content="#0F2F39">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gaeilge, the living thread">
+<meta property="og:description" content="An interactive journey through the history of the Irish language and where it stands today, from the ogham stones to Census 2022.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+</head>
+<body>
+<a class="skip" href="#cloch">Skip to the first chapter</a>
+<canvas id="world" aria-hidden="true"></canvas>
+<div id="grain" aria-hidden="true"></div>
+<div id="labels" aria-hidden="true"></div>
+
+<header class="mast">
+  <a class="wordmark" href="#tairseach" aria-label="Gaeilge, back to the start"><span data-knot></span><span>Gaeilge</span></a>
+  <p class="mast__where" id="where" aria-live="polite"></p>
+</header>
+
+<nav class="stem" aria-label="Chapters"><ol id="stem"></ol></nav>
+
+<main id="main">
+
+<section class="ch ch--hero" id="tairseach" data-ga="Tairseach" data-en="threshold">
+  <div class="step">
+    <div class="hero">
+      <h1>Carved into eternity</h1>
+      <p class="hero__lede">A 1,600-year journey from the ogham stones to the 2022 census.</p>
+      <div class="hero__actions">
+        <a class="btn" href="#cloch">Begin the journey</a>
+        <a class="dotlink" href="#inniu">Skip to today’s figures</a>
+      </div>
+      <p class="hero__how">Scroll to move forward and drag to look around. The index on the right reads from the bottom up, like ogham.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="cloch" data-n="I" data-ga="Cloch" data-en="the stone">
+  <div class="step">
+    <article class="gloss">
+      <header class="plate">
+        <p class="plate__n">I</p>
+        <div><h2 lang="ga">Cloch</h2><p class="plate__es">The stone, 4th to 7th centuries</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>The oldest writing in Irish is cut into the edge of a stone. Ogham records each sound as strokes and notches on either side of an edge, and it is read from the bottom up.</p>
+      <p>Around 400 inscriptions survive, most of them from the 5th and 6th centuries. Nearly all are names: who someone was, and whose son. Most are found in an arc running from County Kerry to south Wales.</p>
+      <p class="note">The word that turns up most often is MAQI, ‘son of’. In modern Irish it is <span lang="ga">mac</span>, the Mac in so many surnames.</p>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss">
+      <h3>Carve a name in the stone</h3>
+      <div class="ogham">
+        <div class="ogham__stone"><svg id="ogham-svg" viewBox="0 0 90 300" role="img" aria-label="Ogham inscription of the text you typed"></svg></div>
+        <div>
+          <form class="field" id="ogham-form">
+            <label for="ogham-input">Up to 12 letters</label>
+            <input id="ogham-input" name="ogham" value="Gaeilge" maxlength="16" autocomplete="off" autocapitalize="off" spellcheck="false">
+          </form>
+          <p class="ogham__read" id="ogham-read"></p>
+        </div>
+      </div>
+      <div class="ogham__key" id="ogham-key"></div>
+      <p class="note">Classical ogham has no P, J, K, V, W, X or Y, so those are swapped for the nearest letter.</p>
+    </article>
+  </div>
+</section>
+
+<section class="ch" id="lamhscribhinn" data-n="II" data-ga="Lámhscríbhinn" data-en="the manuscript">
+  <div class="step">
+    <article class="gloss gloss--r">
+      <header class="plate">
+        <p class="plate__n">II</p>
+        <div><h2 lang="ga">Lámhscríbhinn</h2><p class="plate__es">The manuscript, 5th to 17th centuries</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>Christianity brought the Latin alphabet in the 5th century. In the monasteries, scribes began jotting Irish in the margins of their Latin books.</p>
+      <p>Those 8th- and 9th-century glosses are the bedrock of what we know about Old Irish. Out of them grew one of the oldest vernacular literatures in western Europe.</p>
+      <ol class="periods" aria-label="Stages of Irish">
+        <li><b>Primitive</b>4th to 6th c., the language of the stones</li>
+        <li><b>Old</b>c. 600 to 900</li>
+        <li><b>Middle</b>c. 900 to 1200</li>
+        <li><b>Classical</b>c. 1200 to 1600</li>
+        <li><b>Modern</b>from 1600</li>
+      </ol>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss gloss--r">
+      <h3>Latin hiding in everyday Irish</h3>
+      <table class="tbl" id="latin-table">
+        <thead><tr><th scope="col">Irish</th><th scope="col">Latin</th><th scope="col">Meaning</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="note">In small type, an English word from the same Latin root. The leaves you pass carry these ten words.</p>
+    </article>
+  </div>
+  <div class="step step--hold">
+    <article class="gloss gloss--r gloss--wide">
+      <h3>The language crosses the sea</h3>
+      <p>From the 5th century, settlers from the north-east of Ireland carried their language to Scotland and the Isle of Man. Scottish Gaelic and Manx both grew from that stem.</p>
+      <figure>
+        <svg id="tree" role="img" aria-label="Family tree of the Celtic languages"></svg>
+        <figcaption>One common classification of the Celtic languages. The Continental branch died out in antiquity. Manx and Cornish lost their last native speakers and are now being revived.</figcaption>
+      </figure>
+    </article>
+  </div>
+</section>
+
+<div class="avenue">
+<section class="ch" id="culu" data-n="III" data-ga="Cúlú" data-en="the retreat">
+  <div class="step step--slide">
+    <article class="gloss">
+      <header class="plate">
+        <p class="plate__n">III</p>
+        <div><h2 lang="ga">Cúlú</h2><p class="plate__es">The retreat, 1366 to 1911</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>For a thousand years Irish was the language of almost the whole island, Norman settlers included. The English conquest changed who ruled, who owned the land and which language got you on in life.</p>
+      <p>Each knot in the thread is a date, tagged with what happened.</p>
+    </article>
+  </div>
+  <div class="step" aria-label="Key dates, 1366 to 1845">
+    <ol class="vh">
+      <li>1366, Statutes of Kilkenny: English settlers are forbidden to speak Irish. The law itself is proof that they did.</li>
+      <li>1537, Act for English Order, Habit and Language: Henry VIII orders the Irish to take up English speech, dress and customs.</li>
+      <li>1607, Flight of the Earls: the last great Gaelic lords of Ulster leave for exile, and the professional poets lose their patrons.</li>
+      <li>1695, Penal Laws: the Catholic majority is shut out of land, education and office. English becomes the language of getting on.</li>
+      <li>1831, National Schools: state primary education is taught through English.</li>
+      <li>1845, An Gorta Mór, the Great Famine: by 1852 around a million people have died and well over a million more have emigrated. It strikes hardest in the west, where Irish was most widely spoken.</li>
+    </ol>
+  </div>
+  <div class="step step--slide">
+    <article class="gloss">
+      <h3>The stones are censuses</h3>
+      <p>In 1851 the census asked for the first time who spoke Irish. Each stone on this avenue is a census, and its height is the number of people who said they could speak it in the 26 counties of today’s Republic.</p>
+      <p>In 1861 that was 1,077,087 people, or 24.5%. By 1911 only 553,717 remained, 17.6%. The thickness of the thread follows the same figure.</p>
+      <p class="note">Gaps in the row are years without a census, such as 1921, or censuses that did not ask about language.</p>
+    </article>
+  </div>
+</section>
+
+<section class="ch" id="athbheochan" data-n="IV" data-ga="Athbheochan" data-en="the revival">
+  <div class="step">
+    <article class="gloss">
+      <header class="plate">
+        <p class="plate__n">IV</p>
+        <div><h2 lang="ga">Athbheochan</h2><p class="plate__es">The revival, 1893 to 2022</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>By the late 19th century Irish was the language of the poor, rural west. A cultural movement set out to bring it back into public life, and the new state took it into the classroom.</p>
+      <p>Each post along the avenue marks a date, between the censuses.</p>
+    </article>
+  </div>
+  <div class="step step--long" aria-label="Key dates, 1893 to 2022">
+    <ol class="vh">
+      <li>1893, Conradh na Gaeilge: Douglas Hyde and Eoin MacNeill found the Gaelic League to keep Irish alive as a spoken language.</li>
+      <li>1922, Irish Free State: Irish becomes the ‘national language’ and a compulsory subject in primary school.</li>
+      <li>1937, Bunreacht na hÉireann: Article 8 of the Constitution makes Irish the first official language.</li>
+      <li>1972, Raidió na Gaeltachta: Irish-language national radio goes on air.</li>
+      <li>1996, Teilifís na Gaeilge, now TG4. The same year, the census starts asking how often people speak Irish.</li>
+      <li>2003, Official Languages Act: sets out how public bodies must provide services in Irish.</li>
+      <li>2007, Irish becomes an official language of the European Union.</li>
+      <li>2021, the Act is amended: by 2030, one in five new recruits to the public service must be competent in Irish.</li>
+      <li>2022, full EU status from 1 January. In December, a new law gives Irish official status in Northern Ireland.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <article class="gloss">
+      <h3>The rise comes from school</h3>
+      <p>The last stone is the tallest in the row: 1,873,997 people. Nearly all of them learned their Irish in the classroom. Until 1996 the census only asked whether people could speak it, not how much they actually used it.</p>
+      <p>The next stretch pulls those two things apart.</p>
+    </article>
+  </div>
+</section>
+
+<aside class="strip" aria-label="Irish speakers at each census, 1861 to 2022">
+  <div class="strip__now">
+    <p class="strip__year" id="strip-year">1861</p>
+    <p class="strip__n" id="strip-n"></p>
+  </div>
+  <figure><svg id="census" role="img" aria-label="People who said they could speak Irish at each census, 1861 to 2022"></svg></figure>
+</aside>
+</div>
+
+<section class="ch" id="inniu" data-n="V" data-ga="Inniu" data-en="today">
+  <div class="step step--slide" data-form="0">
+    <article class="gloss">
+      <header class="plate">
+        <p class="plate__n">V</p>
+        <div><h2 lang="ga">Inniu</h2><p class="plate__es">Today, Census 2022</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p class="big">1,873,997</p>
+      <p>people say they can speak Irish. That is 40% of everyone aged 3 and over who answered the question.</p>
+      <p class="note">Each dot is 1,000 people.</p>
+    </article>
+  </div>
+  <div class="step" data-form="1">
+    <article class="gloss">
+      <h3>How often do they speak it?</h3>
+      <table class="tbl" id="freq-table">
+        <thead><tr><th scope="col">How often</th><th scope="col" class="num">People</th><th scope="col" class="num">%</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="note">In red, those who speak it daily outside the education system.</p>
+    </article>
+  </div>
+  <div class="step" data-form="2">
+    <article class="gloss">
+      <h3>The core</h3>
+      <p class="big">71,968</p>
+      <p>speak it every day outside the education system. That is 3.8% of those who say they can speak it, and 1,835 fewer than in 2016.</p>
+      <p>You could fit every one of them into Croke Park and still have more than 10,000 of its 82,300 seats to spare.</p>
+    </article>
+  </div>
+  <div class="step" data-form="3">
+    <article class="gloss">
+      <h3>And how well?</h3>
+      <table class="tbl" id="ability-table">
+        <thead><tr><th scope="col">Self-rated ability</th><th scope="col" class="num">People</th><th scope="col" class="num">%</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p>2022 was the first census to ask how well people speak it. Among speakers aged 15 to 19, 63% say well or very well. Among those aged 50 to 54, it is 27%.</p>
+    </article>
+  </div>
+</section>
+
+<section class="ch" id="gaeltacht" data-n="VI" data-ga="Gaeltacht" data-en="where it is spoken">
+  <div class="step step--hold step--hold-map">
+    <article class="gloss gloss--r">
+      <header class="plate">
+        <p class="plate__n">VI</p>
+        <div><h2 lang="ga">Gaeltacht</h2><p class="plate__es">Where it is the language of the street</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>The Gaeltacht is made up of the areas the State recognises as Irish-speaking. They are spread across seven counties, most of them along the west coast.</p>
+      <p>106,220 people live there. 65,156 can speak Irish and 20,261 speak it daily outside education, down from 23,175 in 2011.</p>
+      <p class="note">On the map each pillar is one area. Its height shows daily speakers in 2022, and the thin cross above it marks the 2011 level. Positions are approximate.</p>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss gloss--r gloss--wide">
+      <h3>Daily speakers, area by area</h3>
+      <figure>
+        <svg id="slope" role="img" aria-label="Daily Irish speakers in each Gaeltacht area in 2011, 2016 and 2022"></svg>
+        <figcaption>Daily speakers outside education in each Gaeltacht area, on a log scale. In red, the areas where the number has grown since 2011.</figcaption>
+      </figure>
+      <table class="tbl" id="gael-table">
+        <thead><tr><th scope="col">Area</th><th scope="col" class="num">Population</th><th scope="col" class="num">Can speak Irish</th><th scope="col" class="num">Daily</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss">
+      <h3>Beyond the Gaeltacht</h3>
+      <p>By county, Galway County (50%) and Clare (47%) have the highest share of people who say they can speak Irish. Dublin City (33%) and Louth (35%) have the lowest.</p>
+      <p>In An Bun Beag in Donegal and An Cheathrú Rua in Galway, 69% of people speak it every day.</p>
+      <p>In Northern Ireland, the 2021 census counted 228,600 people with some ability in Irish, or 12.4%. For around 6,000 of them it is their main language.</p>
+      <p class="note">On the map, the darker counties are above the national figure of 40%. Every county in the Republic is between 33% and 50%.</p>
+    </article>
+  </div>
+</section>
+
+<section class="ch" id="focail" data-n="VII" data-ga="Focail" data-en="words">
+  <div class="step">
+    <article class="gloss">
+      <header class="plate">
+        <p class="plate__n">VII</p>
+        <div><h2 lang="ga">Focail</h2><p class="plate__es">Words, the language from the inside</p></div>
+        <div class="plate__band" data-plait="dark"></div>
+      </header>
+      <p>Irish puts the verb first. <span lang="ga">Chonaic mé an fharraige</span> is, word for word, ‘saw I the sea’.</p>
+      <p>There is no single word for ‘yes’ or ‘no’. You answer by repeating the verb: <span lang="ga">An dtuigeann tú?</span> ‘Do you understand?’ <span lang="ga">Tuigim.</span> ‘I understand.’</p>
+      <p>To say you speak a language, you say it is at you: <span lang="ga">Tá Gaeilge agam</span>, ‘Irish is at me’.</p>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss gloss--r">
+      <h3>The first letter changes</h3>
+      <p>Depending on the word in front of it, a noun’s first consonant is softened (<span lang="ga">séimhiú</span>, lenition) or covered by another (<span lang="ga">urú</span>, eclipsis). Try it.</p>
+      <form class="mut" id="mut-form">
+        <div class="field"><label for="mut-pos">Possessive</label><select id="mut-pos" name="pos"></select></div>
+        <div class="field"><label for="mut-noun">Noun</label><select id="mut-noun" name="noun"></select></div>
+        <div class="mut__out" aria-live="polite">
+          <p class="mut__ga" id="mut-ga" lang="ga"></p>
+          <p class="mut__es" id="mut-es"></p>
+          <p class="mut__old" id="mut-old"></p>
+        </div>
+      </form>
+      <p class="note" id="mut-note"></p>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss">
+      <h3>Words English took from Irish and Gaelic</h3>
+      <ul class="pairs" id="loans"></ul>
+      <p class="note"><span lang="ga">Sluagh-ghairm</span> and <span lang="ga">clann</span> came into English through Scottish Gaelic, itself a daughter of medieval Irish. And <span lang="ga">craic</span> went the other way: it is the English ‘crack’, respelt in Irish.</p>
+    </article>
+  </div>
+  <div class="step">
+    <article class="gloss gloss--r">
+      <h3>A few to start with</h3>
+      <ul class="pairs" id="phrases"></ul>
+      <p class="note">The sound-alikes are rough guides and shift from one dialect to the next.</p>
+    </article>
+  </div>
+</section>
+
+<section class="ch" id="crioch" data-ga="Críoch" data-en="the end">
+  <div class="fin">
+    <p class="fin__saw" lang="ga">Beatha teanga í a labhairt.</p>
+    <p class="fin__es">The life of a language is in the speaking of it.</p>
+    <article class="gloss">
+      <h3>Sources and method</h3>
+      <ul class="src">
+        <li>Central Statistics Office (CSO), Census 2022, <a class="dotlink" href="https://www.cso.ie/en/releasesandpublications/ep/p-cpp8/censusofpopulation2022profile8-theirishlanguageandeducation/irishlanguageandthegaeltacht/">Profile 8: The Irish Language and the Gaeltacht</a> and <a class="dotlink" href="https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/educationandirishlanguage">Summary Results</a>.</li>
+        <li>CSO historical series of Irish speakers since 1861, via <a class="dotlink" href="https://db.nomics.world/CSO/CNA09/0.CNA09C1">DBnomics</a>. It counts people aged 3 and over in the 26 counties of the Republic. The 2016 and 2022 percentages are based on those who answered the question.</li>
+        <li>Daily speakers by Gaeltacht area: CSO tables F8028 and F8033, as compiled by <a class="dotlink" href="https://myireland.ie/gaeltacht/">My Ireland</a>.</li>
+        <li>Northern Ireland: NISRA Census 2021, figures as reported by <a class="dotlink" href="https://www.irishtimes.com/ireland/2022/09/22/more-catholics-than-protestants-in-northern-ireland-for-first-time-census-finds">The Irish Times</a>.</li>
+        <li>Ogham: <a class="dotlink" href="https://heritageireland.ie/unguided-sites/ballintaggart-ogham-stones/">Heritage Ireland</a>. European Union: <a class="dotlink" href="https://www.gov.ie/en/press-release/98a6f-ending-of-irish-derogation">Government of Ireland</a>.</li>
+        <li>In the frequency table, ‘not stated’ is the difference between the total and the published categories.</li>
+        <li>Map boundaries from <a class="dotlink" href="https://www.naturalearthdata.com/">Natural Earth</a>. The knots, the ogham and the pen hatching are drawn in your browser.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+</main>
+<div id="tip" role="tooltip"></div>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/d3.min.js"></script>
+<script src="js/paper.js"></script>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/world.js"></script>
+<script src="js/mobile.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
