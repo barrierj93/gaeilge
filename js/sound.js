@@ -31,15 +31,23 @@
     };
     raf = requestAnimationFrame(step);
   }
-  btn.addEventListener('click', () => {
-    on = !on; paint();
-    if (on) {
-      a.preload = 'auto';
-      const p = a.play();
-      if (p && p.then) p.then(() => { if (on) fade(VOL, 1500); }).catch(() => { on = false; paint(); });
-      else fade(VOL, 1500);
-    } else fade(0, 600, () => { if (!on) a.pause(); });
-  });
+  function start() {
+    on = true; paint(); a.preload = 'auto';
+    const p = a.play();
+    if (p && p.then) p.then(() => { if (on) fade(VOL, 1500); }).catch(() => { on = false; paint(); });
+    else fade(VOL, 1500);
+  }
+  function stop() { on = false; paint(); fade(0, 600, () => { if (!on) a.pause(); }); }
+  let chosen = false;
+  btn.addEventListener('click', () => { chosen = true; if (on) stop(); else start(); });
+
+  const firstTouch = e => {
+    if (chosen || on || !(APP.mobile && APP.mobile.active) || e.pointerType === 'mouse') return;
+    if (e.target && e.target.closest && e.target.closest('.snd')) return;
+    start();
+  };
+  addEventListener('pointerup', firstTouch, { capture: true, passive: true });
+  addEventListener('touchend', firstTouch, { capture: true, passive: true });
 
   document.addEventListener('visibilitychange', () => {
     if (!on) return;
